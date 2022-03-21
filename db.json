@@ -1,0 +1,37 @@
+{
+  "projects": [
+    {
+      "name": "Comprar uma moto",
+      "budget": "20000",
+      "category": {
+        "id": "3",
+        "name": "Gastos"
+      },
+      "cost": null,
+      "services": [],
+      "id": 1
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Investimento"
+    },
+    {
+      "id": 2,
+      "name": "Desenvolvimento"
+    },
+    {
+      "id": 3,
+      "name": "Gastos"
+    },
+    {
+      "id": 4,
+      "name": "Planejamento"
+    },
+    {
+      "id": 5,
+      "name": "Produtos"
+    }
+  ]
+}

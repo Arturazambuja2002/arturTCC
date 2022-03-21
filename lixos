@@ -1,0 +1,164 @@
+
+
+.item  {
+  --color: #B3EFB2;
+  font-family: inherit;
+  display: inline-block;
+  width: 7em;
+  height: 2.4em;
+  line-height: 2.4em;
+  margin: 15px;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid var(--color);
+  transition: color .5s;
+  z-index: 1;
+  font-size: 17px;
+  border-radius: 6px;
+  font-weight: 500;
+  color: var(--color);
+  text-decoration: none;
+  text-align: center;
+  background-color: #E8F1F2;
+  color: #001A23
+ }
+ 
+ .item :before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  background: var(--color);
+  height: 150px;
+  width: 200px;
+  border-radius: 50%;
+ }
+ 
+ .item :hover {
+  color: #001A23;
+ }
+ 
+ .item :before {
+  top: 100%;
+  left: 100%;
+  transition: all .7s;
+ }
+ 
+ .item :hover:before {
+  top: -30px;
+  left: -30px;
+ }
+ 
+ .item :active:before {
+  background: #B3EFB2;
+  transition: background 0s;
+ }
+
+
+
+
+
+        .login_container {
+          width: 90%;
+          height: 90%;
+          background-color: red;
+          margin: 40px;
+          padding: 5em;
+          padding-right: 20em;
+        }
+        
+        .login_container h1 {
+          margin-bottom: 0.5em;
+        }
+        
+        .login_container p {
+          color: #7b7b7b;
+        }
+      
+        .btn {
+          background-color: #001A23;
+          color: #E8F1F2;
+          padding: 0.7em 1.2em;
+          text-decoration: none;
+          font-size: small;
+          transition: 0.5s;
+          cursor: pointer;
+          border: none;
+        }
+        
+        .btn:hover {
+          color: #001A23;
+          background-color: #A6DFA5;
+        }
+
+
+
+        const signUpButton = document.getElementById('signUp');
+    const signInButton = document.getElementById('signIn');
+    const container = document.getElementById('container');
+
+signUpButton.addEventListener('click', () => {
+	container.classList.add("right-panel-active");
+});
+
+signInButton.addEventListener('click', () => {
+	container.classList.remove("right-panel-active");
+});
+
+    return(
+        <div className="container" id="container">
+	<div className="form-container sign-up-container">
+		<form action="#">
+			<h1>Create Account</h1>
+			<div className="social-container">
+				<a href="#" className="social"><i className="fab fa-facebook-f"></i></a>
+				<a href="#" className="social"><i className="fab fa-google-plus-g"></i></a>
+				<a href="#" className="social"><i className="fab fa-linkedin-in"></i></a>
+			</div>
+			<span>or use your email for registration</span>
+			<input type="text" placeholder="Name" />
+			<input type="email" placeholder="Email" />
+			<input type="password" placeholder="Password" />
+			<button>Sign Up</button>
+		</form>
+	</div>
+	<div className="form-container sign-in-container">
+		<form action="#">
+			<h1>Sign in</h1>
+			<div className="social-container">
+				<a href="#" className="social"><i className="fab fa-facebook-f"></i></a>
+				<a href="#" className="social"><i className="fab fa-google-plus-g"></i></a>
+				<a href="#" className="social"><i className="fab fa-linkedin-in"></i></a>
+			</div>
+			<span>or use your account</span>
+			<input type="email" placeholder="Email" />
+			<input type="password" placeholder="Password" />
+			<a href="#">Forgot your password?</a>
+			<button>Sign In</button>
+		</form>
+	</div>
+	<div className="overlay-container">
+		<div className="overlay">
+			<div className="overlay-panel overlay-left">
+				<h1>Welcome Back!</h1>
+				<p>To keep connected with us please login with your personal info</p>
+				<button className="ghost" id="signIn">Sign In</button>
+			</div>
+			<div className="overlay-panel overlay-right">
+				<h1>Hello, Friend!</h1>
+				<p>Enter your personal details and start journey with us</p>
+				<button className="ghost" id="signUp">Sign Up</button>
+			</div>
+		</div>
+	</div>
+</div>
+        
+
+app.post('/login', function(req,res){
+  let login = req.body.email;
+  let senha = req.body.senha;
+
+  User.findOne(({ where: {email: email} }).then(function(user){
+      if(user.email == login && user.senha == senha){
+          res.redirect('/projects')
+      }
+  })

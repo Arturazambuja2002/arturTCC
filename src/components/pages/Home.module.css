@@ -1,0 +1,39 @@
+.home_container {
+  width: 100%;
+  padding: 2.5em;
+  display:inline-flex;
+  justify-content: space-between;
+  margin-inline-start: 7em;
+  margin-top: 40px;
+}
+.home_container h1{
+  font-size: 50px;
+}
+
+.home_container p{
+  font-size: 40px;
+  padding-top: -20px;
+}
+
+.buttonExplore {
+  padding-top: -3em;
+}
+
+.Ilustracao_Home{
+    max-width:450px;
+    max-height:300px;
+    width: auto;
+    height: auto;
+}
+
+.Logo_Home{
+  max-width:500px;
+  max-height:350px;
+  width: auto;
+  height: auto;
+  margin-left: -80px;
+  margin-top: -40px;
+}
+
+
+

@@ -1,0 +1,60 @@
+.navbar {
+  display: flex;
+  background-color: #FDFBF9;
+  padding: 10px;
+  text-align: center;
+}
+.navbar img{
+  height: 110px;
+  width: 110px;
+  margin-left: 15px;
+}
+
+.list {
+  display: inline-flex;
+  list-style: none;
+  align-items: center;
+  text-decoration: none;
+  
+}
+
+.item:hover{
+  background-color: #98f576;
+  transition: 0.3s;
+}
+.item{
+  margin: 20px;
+  text-align: center;
+  border: 5px;
+  border-color: black;
+  border-radius: 5px;
+  padding: 5px;
+ 
+}
+.item_link{
+  text-decoration: none;
+  color:#001A23;
+}
+
+.item_linkLogin{
+  background-color: #20332c;
+  padding: 0.6em;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  text-decoration: none;
+  color: #FDFBF9;
+}
+.item_linkLogin:hover{
+  background-color: #98f576;
+  transition: 0.5s;
+}
+
+.listLogin{
+  text-decoration: none;
+  display: inline-flex;
+  list-style: none;
+  padding-top: 1em;
+  margin-top: 42px;
+}
+
+
